@@ -1,0 +1,56 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '20'
+
+      - name: Install Backend Dependencies
+        run: |
+          cd backend
+          npm ci
+
+      - name: Install PostgreSQL client
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y postgresql-client
+
+      - name: Apply DB schema
+        run: |
+          cd backend
+          echo "No DB schema apply step configured. Add a schema command in your workflow or backend package scripts."
+
+      - name: Run backend tests
+        run: |
+          cd backend
+          echo "No backend tests configured in backend/package.json. Add tests or update this step."
+
+      - name: Install Frontend Dependencies
+        run: |
+          cd frontend
+          npm ci
+
+      - name: Lint Frontend
+        run: |
+          cd frontend
+          echo "No frontend lint script configured. Add a lint command or install ESLint if you want real lint checks."
+
+      - name: Build React App
+        run: |
+          cd frontend
+          npm run build
