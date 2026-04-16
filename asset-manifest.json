@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/FinTrack/static/css/main.6d7e0ae7.css",
+    "main.js": "/FinTrack/static/js/main.f069f09e.js",
+    "index.html": "/FinTrack/index.html",
+    "main.6d7e0ae7.css.map": "/FinTrack/static/css/main.6d7e0ae7.css.map",
+    "main.f069f09e.js.map": "/FinTrack/static/js/main.f069f09e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6d7e0ae7.css",
+    "static/js/main.f069f09e.js"
+  ]
+}
