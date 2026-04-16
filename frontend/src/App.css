@@ -1,0 +1,100 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #0f0f12;
+  color: #fff;
+}
+
+.shell {
+  display: flex;
+}
+
+.sidebar {
+  width: 220px;
+  background: #17171c;
+  height: 100vh;
+  padding: 20px;
+}
+
+.nav-item {
+  margin: 15px 0;
+  cursor: pointer;
+  color: #aaa;
+}
+
+.nav-item.active {
+  color: #7c6ff7;
+}
+
+.main {
+  flex: 1;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background: #17171c;
+}
+
+.content {
+  padding: 20px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.stat-card {
+  background: #1e1e26;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.card {
+  background: #1e1e26;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.bar {
+  width: 20px;
+  background: #7c6ff7;
+  margin: 5px;
+}
+
+.tx-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: #1e1e26;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+button {
+  padding: 8px 12px;
+  margin-top: 10px;
+  cursor: pointer;
+}
