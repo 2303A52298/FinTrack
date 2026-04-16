@@ -21,9 +21,8 @@ jobs:
           node-version: '20'
 
       - name: Install Backend Dependencies
-        run: |
-          cd backend
-          npm ci
+        working-directory: backend
+        run: npm install
 
       - name: Install PostgreSQL client
         run: |
@@ -31,19 +30,18 @@ jobs:
           sudo apt-get install -y postgresql-client
 
       - name: Apply DB schema
+        working-directory: backend
         run: |
-          cd backend
           echo "No DB schema apply step configured. Add a schema command in your workflow or backend package scripts."
 
       - name: Run backend tests
+        working-directory: backend
         run: |
-          cd backend
           echo "No backend tests configured in backend/package.json. Add tests or update this step."
 
       - name: Install Frontend Dependencies
-        run: |
-          cd frontend
-          npm ci
+        working-directory: frontend
+        run: npm install
 
       - name: Lint Frontend
         run: |
