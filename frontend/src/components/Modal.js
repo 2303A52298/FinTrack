@@ -22,10 +22,10 @@ function Modal({ close, addExpense }) {
   return (
     <div className="modal-overlay">
       <div className="modal">
-        <h3>Add Expense</h3>
+        <h3>Add New Transaction</h3>
 
         <input
-          placeholder="Title"
+          placeholder="What did you spend on?"
           value={form.desc}
           onChange={(e) =>
             setForm({ ...form, desc: e.target.value })
@@ -34,7 +34,7 @@ function Modal({ close, addExpense }) {
 
         <input
           type="number"
-          placeholder="Amount"
+          placeholder="Amount (₹)"
           value={form.amt}
           onChange={(e) =>
             setForm({ ...form, amt: e.target.value })
@@ -46,15 +46,19 @@ function Modal({ close, addExpense }) {
           onChange={(e) =>
             setForm({ ...form, category: e.target.value })
           }
+          style={{ width: "100%", padding: "12px 16px", marginBottom: "16px", background: "rgba(0,0,0,0.2)", border: "1px solid var(--border-color)", color: "var(--text-main)", borderRadius: "8px", outline: "none" }}
         >
-          <option>Food</option>
-          <option>Transport</option>
-          <option>Shopping</option>
-          <option>Other</option>
+          <option value="Food" style={{ background: "var(--bg-dark)" }}>Food & Dining</option>
+          <option value="Transport" style={{ background: "var(--bg-dark)" }}>Transportation</option>
+          <option value="Shopping" style={{ background: "var(--bg-dark)" }}>Shopping</option>
+          <option value="Entertainment" style={{ background: "var(--bg-dark)" }}>Entertainment</option>
+          <option value="Other" style={{ background: "var(--bg-dark)" }}>Other</option>
         </select>
 
-        <button onClick={handleSubmit}>Add Expense</button>
-        <button onClick={close}>Cancel</button>
+        <div className="modal-actions">
+          <button className="btn-secondary" onClick={close}>Cancel</button>
+          <button onClick={handleSubmit}>Save Transaction</button>
+        </div>
       </div>
     </div>
   );
