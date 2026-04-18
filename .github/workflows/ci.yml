@@ -12,10 +12,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Show repository structure
+        run: ls -la
+
+      - name: Setup Node
         uses: actions/setup-node@v5
         with:
           node-version: '20'
